@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,9 +9,10 @@
 
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!--Header > h1 title, form > inputs x2-->
-    <header> 
+    <header>
         <h1>FED2204 - Aliens's Task List</h1>
 
         <form id="new-task-form">
@@ -20,7 +22,45 @@
     </header>
 
     <!--Main body containing tasks > main > section > tasks> tasks> actions > btns-->
-    
+
+    <main>
+        <section class="task-list">
+            <h2>Tasks</h2>
+
+            <div id="tasks">
+                <!--
+                    There are two main parts of each task
+                    1. the task content
+                    2. action btn (edit/delete/save) associated with each task specifically
+                -->
+
+                <!-- Read Only -->
+                <div class="task">
+                    <div class="content">
+                        <input type="text" class="text" value="Retrieve UFO" readonly>
+                    </div>
+                    <div class="actions">
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </div>
+                </div>
+                <!-- w/o readonly -->
+                <div class="task">
+                    <div class="content">
+                        <input type="text" class="text" value="Raid Area 51">
+                    </div>
+                    <div class="actions">
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+    </main>
+
     <script src="main.js"></script>
 </body>
+
 </html>
