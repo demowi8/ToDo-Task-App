@@ -3,9 +3,9 @@ window.addEventListener('loads', () => {
     //**Define document variables */
     const form = document.querySelector('#new-task-form');
     const input = document.querySelector('#new-task-input');
-    const list_el = document.querySelector('#tasks');
+    const list_el = document.querySelector('#tasks'); 
 
-    form.addEventListener('submit',(event) => {
+    form.addEventListener('Submit',(event) => {
         // !! Prevent default page refresh
         event.preventDefault();
         
@@ -56,6 +56,25 @@ window.addEventListener('loads', () => {
         task_el.appendChild(task_actions_el);
 
         list_el.appendChild(task_el);
+        input.value = '';
 
-    })
-})
+        task_edit_el.addEventListener('click', () => {
+            //*foundational body
+            // task_input_el.removeAttribute('readonly');
+            // task_input_el.focus();
+            // task_edit_el.innerText = 'Save';
+
+            if(task_edit_el.innerText.toUpperCase() == 'EDIT'){
+                task_input_el.removeAttribute('readonly');
+                task_input_el.focus();
+                task_edit_el.innerText = 'Save';
+            } else {
+                task_input_el.setAttribute('readonly', 'readonly');
+                task_edit_el.innerText = 'Edit';
+            }
+        });
+        task_delete_el.addEventListener('click', () => {
+            list_el.removeChild(task_el);
+        });
+    });
+});
